@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MKrecap AI Studio - Opus Engine</title>
+    <title>MKrecap AI - Pro Studio (Opus & vidIQ Engine)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -29,19 +29,20 @@
         ::-webkit-scrollbar-track { background: #1f2937; }
         ::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #0ea5e9; }
+        .smooth-scroll { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen">
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen smooth-scroll">
 
     <nav class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="p-2 bg-brand-500/10 text-brand-500 rounded-lg">
-                    <i data-lucide="clapperboard" class="w-6 h-6"></i>
+                    <i data-lucide="zap" class="w-6 h-6 fill-current"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg tracking-wide bg-gradient-to-r from-brand-500 to-sky-400 bg-clip-text text-transparent">MKrecap AI</h1>
-                    <p class="text-xs text-slate-400">Opus Style Video Re-purpose Studio</p>
+                    <h1 class="font-bold text-lg tracking-wide bg-gradient-to-r from-brand-500 to-sky-400 bg-clip-text text-transparent">MKrecap AI Pro</h1>
+                    <p class="text-xs text-slate-400">Opus Clips & vidIQ Multi-Cutter Engine</p>
                 </div>
             </div>
             
@@ -73,13 +74,13 @@
             <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
                 <div class="flex items-center gap-2 mb-4">
                     <i data-lucide="scissors" class="w-5 h-5 text-brand-500"></i>
-                    <h2 class="font-semibold text-sm uppercase tracking-wider text-slate-300" data-mm="၁။ ဗီဒီယိုအရှည်လင့်ခ် ထည့်သွင်းရန်" data-en="1. Insert Long-form Video URL">၁။ ဗီဒီယိုအရှည်လင့်ခ် ထည့်သွင်းရန်</h2>
+                    <h2 class="font-semibold text-sm uppercase tracking-wider text-slate-300" data-mm="၁။ ယူကျုလင့်ခ် ထည့်သွင်းရန်" data-en="1. Insert YouTube Video URL">၁။ ယူကျုလင့်ခ် ထည့်သွင်းရန်</h2>
                 </div>
 
                 <div class="space-y-1.5 mb-4 p-3 bg-slate-950/60 border border-slate-800 rounded-lg">
                     <label class="text-xs text-slate-400 flex items-center gap-1">
                         <i data-lucide="link" class="w-3 h-3 text-brand-400"></i>
-                        <span data-mm="YouTube / Facebook ဗီဒီယိုလင့်ခ် (URL)" data-en="YouTube / Facebook Video URL">YouTube / Facebook ဗီဒီယိုလင့်ခ် (URL)</span>
+                        <span data-mm="YouTube ဗီဒီယိုလင့်ခ် (URL)" data-en="YouTube Video URL">YouTube ဗီဒီယိုလင့်ခ် (URL)</span>
                     </label>
                     <div class="flex gap-2">
                         <input type="url" id="videoUrlInput" placeholder="https://youtube.com/watch?v=..." class="flex-1 bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-brand-500 text-slate-200">
@@ -87,37 +88,16 @@
                     </div>
                 </div>
 
-                <div class="mb-4">
-                    <label class="text-xs text-slate-400 block mb-1.5" data-mm="ဖြတ်ထုတ်မည့် ဗီဒီယို ပုံစံရွေးချယ်ရန် (AI Cut Format)" data-en="AI Auto-Cut Format Length">ဖြတ်ထုတ်မည့် ဗီဒီယို ပုံစံရွေးချယ်ရန် (AI Cut Format)</label>
-                    <div class="grid grid-cols-2 gap-2">
-                        <label class="flex items-center justify-between p-2.5 bg-slate-950 border border-slate-800 rounded-lg cursor-pointer hover:border-brand-500 transition">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="smartphone" class="w-4 h-4 text-amber-400"></i>
-                                <span class="text-xs font-medium" data-mm="Shorts (အောက် ၆၀စက္ကန့်)" data-en="Shorts (< 60s)">Shorts (အောက် ၆၀စက္ကန့်)</span>
-                            </div>
-                            <input type="radio" name="clipFormat" value="shorts" checked class="w-3.5 h-3.5 accent-brand-500">
-                        </label>
-                        <label class="flex items-center justify-between p-2.5 bg-slate-950 border border-slate-800 rounded-lg cursor-pointer hover:border-brand-500 transition">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="tv-2" class="w-4 h-4 text-emerald-400"></i>
-                                <span class="text-xs font-medium" data-mm="Recap (၃ မိနစ် ဗီဒီယို)" data-en="Recap (3 Mins)">Recap (၃ မိနစ် ဗီဒီယို)</span>
-                            </div>
-                            <input type="radio" name="clipFormat" value="recap" class="w-3.5 h-3.5 accent-brand-500">
-                        </label>
-                    </div>
-                </div>
-
                 <div class="space-y-3">
                     <div>
-                        <label class="text-xs text-slate-400 block mb-1" data-mm="ဇာတ်လမ်း အသံလေယူလေသိမ်း" data-en="Select Narrative Emotion">ဇာတ်လမ်း အသံလေယူလေသိမ်း</label>
+                        <label class="text-xs text-slate-400 block mb-1" data-mm="AI ဖြတ်တောက်မည့် ဒီဇိုင်းပုံစံ" data-en="AI Layout Mode">AI ဖြတ်တောက်မည့် ဒီဇိုင်းပုံစံ</label>
                         <select id="narrativeTone" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-brand-500">
-                            <option value="thrilling" data-mm="စိတ်လှုပ်ရှားစရာ (Thrilling)" data-en="Thrilling & Suspenseful">စိတ်လှုပ်ရှားစရာ (Thrilling)</option>
-                            <option value="funny" data-mm="ဟာသ/လူပြက် (Funny Recap)" data-en="Humorous & Sarcastic">ဟာသ/လူပြက် (Funny Recap)</option>
+                            <option value="auto" data-mm="Auto Shorts (အလိုအလျောက် အများကြီး ထုတ်မည်)" data-en="Auto Multi-Shorts (Batch Mode)">Auto Shorts (အလိုအလျောက် အများကြီး ထုတ်မည်)</option>
                         </select>
                     </div>
-                    <button onclick="processOpusEngine()" class="w-full bg-brand-500 hover:bg-brand-600 active:bg-brand-700 text-white font-bold text-sm py-2.5 rounded-lg flex items-center justify-center gap-2 transition shadow-lg shadow-brand-500/20">
+                    <button onclick="processOpusEngine()" class="w-full bg-gradient-to-r from-brand-500 to-sky-500 hover:from-brand-600 hover:to-sky-600 text-white font-bold text-sm py-3 rounded-lg flex items-center justify-center gap-2 transition shadow-lg shadow-brand-500/20">
                         <i data-lucide="wand-2" class="w-4 h-4"></i>
-                        <span id="btnProcess" data-mm="Opus Engine ဖြင့် ဗီဒီယို ဖြတ်တောက်မည်" data-en="Run Opus AI Auto-Cutter Engine">Opus Engine ဖြင့် ဗီဒီယို ဖြတ်တောက်မည်</span>
+                        <span id="btnProcess" data-mm="Opus Engine ဖြင့် Shorts အများကြီး ခွဲထုတ်မည်" data-en="Run Opus AI & vidIQ Engine">Opus Engine ဖြင့် Shorts အများကြီး ခွဲထုတ်မည်</span>
                     </button>
                 </div>
             </div>
@@ -125,30 +105,24 @@
             <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl">
                 <div class="flex items-center gap-2 mb-4">
                     <i data-lucide="sliders" class="w-5 h-5 text-brand-500"></i>
-                    <h2 class="font-semibold text-sm uppercase tracking-wider text-slate-300" data-mm="၂။ စာတန်းထိုးနှင့် အသံပြင်ဆင်ချက်" data-en="2. Subtitle & Voice Settings">၂။ စာတန်းထိုးနှင့် အသံပြင်ဆင်ချက်</h2>
+                    <h2 class="font-semibold text-sm uppercase tracking-wider text-slate-300" data-mm="၂။ စာတန်းထိုးနှင့် အသံစတိုင်" data-en="2. Captions & Voice Styles">၂။ စာတန်းထိုးနှင့် အသံစတိုင်</h2>
                 </div>
 
                 <div class="space-y-3">
                     <div class="grid grid-cols-2 gap-3">
                         <div>
-                            <label class="text-xs text-slate-400 block mb-1" data-mm="အသံပုံစံ" data-en="Voice Type">အသံပုံစံ</label>
+                            <label class="text-xs text-slate-400 block mb-1" data-mm="အသံနောက်ခံ" data-en="Voiceover">အသံနောက်ခံ</label>
                             <select id="voiceGender" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-brand-500">
                                 <option value="male" data-mm="မောင်မောင် (Deep Male)" data-en="Aiden (Deep Male)">မောင်မောင် (Deep Male)</option>
                                 <option value="female" data-mm="မမေ (Calm Female)" data-en="Chloe (Calm Female)">မမေ (Calm Female)</option>
                             </select>
                         </div>
                         <div>
-                            <label class="text-xs text-slate-400 block mb-1" data-mm="စာလုံးစတိုင်" data-en="Caption Style">စာလုံးစတိုင်</label>
-                            <select id="subStyle" onchange="updateSubtitlePreview()" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-brand-500">
-                                <option value="tiktok" data-mm="TikTok (အဝါရောင်)" data-en="TikTok Yellow">TikTok (အဝါရောင်)</option>
-                                <option value="neon" data-mm="Neon Blue (မီးလင်း)" data-en="Neon Cyber">Neon Blue (မီးလင်း)</option>
+                            <label class="text-xs text-slate-400 block mb-1" data-mm="စာလုံးပုံစံ" data-en="Caption Style">စာလုံးပုံစံ</label>
+                            <select id="subStyle" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:border-brand-500">
+                                <option value="tiktok" data-mm="TikTok (အဝါရောင် ကာတွန်း)" data-en="TikTok Pop">TikTok (အဝါရောင် ကာတွန်း)</option>
                             </select>
                         </div>
-                    </div>
-                    
-                    <div class="p-3 bg-slate-950 rounded-lg border border-slate-800 flex items-center justify-between text-xs">
-                        <span class="text-slate-400" data-mm="မူပိုင်ခွင့် ကာကွယ်ရေးစနစ် (Anti-Copyright Pixel Shift)" data-en="Anti-Copyright Pixel Shift">မူပိုင်ခွင့် ကာကွယ်ရေးစနစ် (Anti-Copyright)</span>
-                        <input type="checkbox" id="copyrightShift" checked class="w-4 h-4 accent-brand-500">
                     </div>
                 </div>
             </div>
@@ -169,59 +143,63 @@
                     <iframe id="mainUrlPlayer" class="w-full h-full hidden" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     
                     <div id="videoPlaceholder" class="text-center p-6 text-slate-500">
-                        <i data-lucide="clapperboard" class="w-10 h-10 mx-auto mb-2 animate-bounce"></i>
-                        <p class="text-xs" data-mm="ဗီဒီယိုလင့်ခ်ထည့်ပြီး Fetch ကိုနှိပ်ပါ" data-en="Provide video URL and press Fetch">ဗီဒီယိုလင့်ခ်ထည့်ပြီး Fetch ကိုနှိပ်ပါ</p>
+                        <i data-lucide="video" class="w-10 h-10 mx-auto mb-2 text-slate-700"></i>
+                        <p class="text-xs" data-mm="ယူကျုလင့်ခ်ထည့်ပြီး Fetch ကိုနှိပ်ပါ" data-en="Provide YouTube URL and press Fetch">ယူကျုလင့်ခ်ထည့်ပြီး Fetch ကိုနှိပ်ပါ</p>
                     </div>
 
                     <div id="videoSubtitleOverlay" class="absolute bottom-6 left-4 right-4 text-center pointer-events-none hidden">
-                        <span id="videoSubText" class="text-yellow-400 text-sm md:text-base font-black px-3 py-1 rounded drop-shadow-[0_2px_4px_rgba(0,0,0,1)] bg-black/40"></span>
+                        <span id="videoSubText" class="text-yellow-400 text-sm md:text-base font-black px-3 py-1 rounded drop-shadow-[0_2px_4px_rgba(0,0,0,1)] bg-black/50"></span>
                     </div>
                 </div>
             </div>
 
-            <div id="opusClipsContainer" class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl hidden space-y-4">
-                <div class="flex items-center justify-between">
+            <div id="opusClipsSection" class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl hidden space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3">
                     <div class="flex items-center gap-2">
-                        <i data-lucide="layers" class="w-5 h-5 text-emerald-400"></i>
-                        <h3 class="font-bold text-sm text-slate-200" data-mm="AI ခွဲထုတ်ပေးလိုက်သော ဗီဒီယိုတိုများ (AI Generated Clips)" data-en="AI Generated Clips by Opus Engine">AI ခွဲထုတ်ပေးလိုက်သော ဗီဒီယိုတိုများ (AI Generated Clips)</h3>
+                        <i data-lucide="layers" class="w-5 h-5 text-amber-400"></i>
+                        <div>
+                            <h3 class="font-bold text-sm text-slate-200" data-mm="AI က အလိုအလျောက် ဖြတ်တောက်ပေးထားသော Shorts ဗီဒီယိုများ" data-en="AI Auto-Generated Shorts Catalog">AI က အလိုအလျောက် ဖြတ်တောက်ပေးထားသော Shorts ဗီဒီယိုများ</h3>
+                            <p class="text-[11px] text-slate-400" data-mm="ဗီဒီယိုအရှည်ကြီးထဲမှ အကောင်းဆုံး အခန်း ၆ ခုကို ဖြတ်ထုတ်ထားပါသည်" data-en="Extracted 6 viral segments instantly from long video.">ဗီဒီယိုအရှည်ကြီးထဲမှ အကောင်းဆုံး အခန်း ၆ ခုကို ဖြတ်ထုတ်ထားပါသည်</p>
+                        </div>
                     </div>
-                    <span class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded uppercase font-mono">Render Ready</span>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3" id="clipsGridList">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="clipsGridList">
                     </div>
             </div>
 
-            <div id="assetsTabsWrapper" class="bg-slate-900 border border-slate-800 rounded-xl shadow-xl overflow-hidden hidden">
-                <div class="flex border-b border-slate-800 bg-slate-950/60 text-xs sm:text-sm">
-                    <button onclick="switchTab('tab-script')" id="btn-tab-script" class="flex-1 py-3 px-4 text-center font-medium border-b-2 border-brand-500 text-brand-500 flex items-center justify-center gap-1.5 transition">
-                        <i data-lucide="file-text" class="w-4 h-4"></i> <span data-mm="AI ဇာတ်ညွှန်း" data-en="AI Script">AI ဇာတ်ညွှန်း</span>
-                    </button>
-                    <button onclick="switchTab('tab-seo')" id="btn-tab-seo" class="flex-1 py-3 px-4 text-center font-medium border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-1.5 transition">
-                        <i data-lucide="hash" class="w-4 h-4"></i> <span data-mm="ခေါင်းစဉ်နှင့် Tags (SEO)" data-en="Title & SEO">ခေါင်းစဉ်နှင့် Tags (SEO)</span>
-                    </button>
+            <div id="vidiqAnalyticsWrapper" class="bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-xl hidden space-y-4">
+                <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
+                    <i data-lucide="bar-chart-3" class="w-5 h-5 text-cyan-400"></i>
+                    <h3 class="font-bold text-sm text-slate-200">vidIQ Professional Optimization Metrics</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+                        <span class="text-[11px] text-slate-400 block mb-0.5">Active Clip SEO Score</span>
+                        <div class="text-xl font-bold text-cyan-400" id="vidiqSeo">92/100</div>
+                    </div>
+                    <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+                        <span class="text-[11px] text-slate-400 block mb-0.5">Keyword Search Volume</span>
+                        <div class="text-xl font-bold text-emerald-400" id="vidiqVol">Very High</div>
+                    </div>
+                    <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
+                        <span class="text-[11px] text-slate-400 block mb-0.5">Predicted Organic Views</span>
+                        <div class="text-xl font-bold text-amber-400" id="vidiqViews">50K - 250K</div>
+                    </div>
                 </div>
 
-                <div class="p-5 min-h-[180px]">
-                    <div id="tab-script" class="tab-content space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-[11px] font-bold tracking-wider text-brand-400 uppercase" data-mm="ရွေးချယ်ထားသော Clip ၏ AI Script" data-en="Selected Clip Active Script">ရွေးချယ်ထားသော Clip ၏ AI Script</span>
-                            <button onclick="copyContent('activeScriptTxt')" class="text-[10px] text-slate-400 hover:text-brand-500 flex items-center gap-1"><i data-lucide="copy" class="w-3 h-3"></i> Copy</button>
+                <div class="p-4 bg-slate-950 rounded-lg border border-slate-800 space-y-3">
+                    <div>
+                        <span class="text-xs font-semibold text-slate-400 block mb-1">AI Optimized Title (Copy-Ready)</span>
+                        <div class="flex gap-2">
+                            <input type="text" id="vidiqTitleBox" class="flex-1 bg-slate-900 border border-slate-800 roundedpx-3 py-1.5 rounded-md text-xs font-semibold text-amber-400 focus:outline-none" readonly>
+                            <button onclick="copyContent('vidiqTitleBox')" class="bg-slate-800 hover:bg-slate-700 text-xs px-3 rounded-md border border-slate-700">Copy</button>
                         </div>
-                        <textarea id="activeScriptTxt" rows="4" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs text-slate-200 leading-relaxed focus:outline-none" readonly></textarea>
                     </div>
-
-                    <div id="tab-seo" class="tab-content hidden space-y-3">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div>
-                                <label class="text-[11px] font-bold text-slate-400 block mb-1">Clip Viral Title</label>
-                                <input type="text" id="activeTitleInp" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-amber-400 font-semibold focus:outline-none" readonly>
-                            </div>
-                            <div>
-                                <label class="text-[11px] font-bold text-slate-400 block mb-1">Optimized Hashtags</label>
-                                <input type="text" id="activeTagsInp" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-sky-400 focus:outline-none" readonly>
-                            </div>
-                        </div>
+                    <div>
+                        <span class="text-xs font-semibold text-slate-400 block mb-1">AI Viral Description Script & Hashtags</span>
+                        <textarea id="vidiqScriptBox" rows="4" class="w-full bg-slate-900 border border-slate-800 rounded-md p-2.5 text-xs text-slate-300 leading-relaxed focus:outline-none" readonly></textarea>
                     </div>
                 </div>
             </div>
@@ -239,83 +217,21 @@
         let currentLang = 'mm';
         let currentEmbedBaseUrl = "";
 
-        // Opus Segmentation Database Model
-        const opusMockDatabase = {
-            shorts: [
-                {
-                    id: 1,
-                    timeLabel: "0:05 - 0:45",
-                    seconds: 5,
-                    score: 98,
-                    mm: {
-                        title: "😱 အမှောင်ထဲက သတ္တဝါကြီး နိုးထလာချိန် (Hook)",
-                        script: "သတိထား! ဒီကျွန်းပေါ်ကို တစ်ခါခြေချမိရင် ဘယ်တော့မှ အပြင်ပြန်မထွက်နိုင်တော့ဘူး။ ဇာတ်လမ်းအစမှာ မင်းသား ဂျွန်တစ်ယောက် ပိတ်လှောင်ခံထားရတဲ့ သတ္တဝါကြီးကို အမှတ်မထင် သွားနှိုးမိရာကနေ...",
-                        tags: "#Shorts #MKrecap #သည်းထိတ်ရင်ဖို #OpusAI"
-                    },
-                    en: {
-                        title: "😱 Awakening of the Ancient Creature (Hook)",
-                        script: "Warning! Once you step into this island, there is absolutely no escape. John accidentally wakes up a beast that has been trapped for centuries...",
-                        tags: "#Shorts #ThrillerBreakdown #ViralClips #OpusAI"
-                    }
-                },
-                {
-                    id: 2,
-                    timeLabel: "2:15 - 3:05",
-                    seconds: 135,
-                    score: 91,
-                    mm: {
-                        title: "🔥 အသည်းထိတ်ရင်ဖို ထွက်ပြေးရမည့်အခန်း (Climax)",
-                        script: "တစ်ရွာလုံးက လူတွေ ဘာလို့ တစ်ညတည်းနဲ့ ပျောက်သွားတာလဲ? ဂျွန်ဟာ ရွာရဲ့ လျှို့ဝှက်မြေအောက်ခန်းထဲကနေ လွတ်မြောက်ဖို့ အသည်းအသန် ကြိုးစားနေရပြီဖြစ်ပါတယ်!",
-                        tags: "#TikTokMM #ရုပ်ရှင်အကျဉ်းချုပ် #ထွက်ပြေးခြင်း #Cinema"
-                    },
-                    en: {
-                        title: "🔥 The Heart-Pounding Escape Routine (Climax)",
-                        script: "Why did everyone vanish in one single night? John is now desperately trying to outrun the creature inside the underground narrow maze!",
-                        tags: "#TrendingClips #MovieRecap #ActionShorts #Cinema"
-                    }
-                },
-                {
-                    id: 3,
-                    timeLabel: "5:40 - 6:30",
-                    seconds: 340,
-                    score: 85,
-                    mm: {
-                        title: "💡 လုံးဝမထင်မှတ်ထားတဲ့ ဇာတ်ရှိန်အလှည့်အပြောင်း (Twist)",
-                        script: "ဇာတ်လမ်းရဲ့ အဆုံးသတ်မှာ ဂျွန်တစ်ယောက် အသက်ရှင်လျက် လွတ်မြောက်နိုင်ပါ့မလား? တကယ်တော့ အဲ့ဒီသတ္တဝါကြီးက သူ့ရဲ့...",
-                        tags: "#ဇာတ်လမ်းအဆုံးသတ် #ရုပ်ရှင် #MinKhant #Recap"
-                    },
-                    en: {
-                        title: "💡 The Most Unexpected Ending Plot (Twist)",
-                        script: "Will John make it out alive in the end? The absolute shocking truth reveals that the monster was actually created by...",
-                        tags: "#EndingExplained #MovieTwist #MindBending #Hollywood"
-                    }
-                }
-            ],
-            recap: [
-                {
-                    id: 1,
-                    timeLabel: "0:00 - 3:15",
-                    seconds: 0,
-                    score: 95,
-                    mm: {
-                        title: "🎬 ၃ မိနစ်စာ ဇာတ်လမ်းအကျဉ်းချုပ် အပြည့်အစုံ",
-                        script: "ဒီနေ့မှာတော့ တစ်ကမ္ဘာလုံးကို တုန်လှုပ်စေခဲ့တဲ့ သည်းထိတ်ရင်ဖို ရုပ်ရှင်ကို ၃ မိနစ်စာနဲ့ အစအဆုံး နားလည်အောင် ပြောပြပေးသွားမှာ ဖြစ်ပါတယ်။ မင်းသား ဂျွန်ရဲ့ စွန့်စားခန်းကို ဆက်ကြည့်လိုက်ရအောင်...",
-                        tags: "#FullRecap #၃မိနစ်ဇာတ်လမ်း #MKrecap #သည်းထိတ်ရင်ဖို"
-                    },
-                    en: {
-                        title: "🎬 3-Minute Complete Movie Breakdown",
-                        script: "Today I will breakdown this global hit thriller movie inside 3 minutes from start to finish. Let's follow John's terrifying journey into the unknown...",
-                        tags: "#MovieRecap #FullStory #3MinRecap #HollywoodExplained"
-                    }
-                }
-            ]
-        };
+        // Opus AI 6 Shorts Data Array Model
+        const bigShortsData = [
+            { id: 1, startSec: 10, score: 99, time: "0:10 - 0:40", mmTitle: "🔥 အပိုင်း ၁ - လုံးဝမကြည့်ရဲစရာ အဖွင့်အခန်း (Hook)", enTitle: "💥 Part 1 - Terrifying Introduction Scene", mmScript: "ဒီနေ့မှာတော့ MKrecap AI ကနေ တကယ့်ကို ထိတ်လန့်စရာကောင်းတဲ့ ဇာတ်လမ်းဆန်းတစ်ခုကို တင်ဆက်ပေးသွားမှာဖြစ်ပါတယ်။ ဇာတ်လမ်းအစမှာ မင်းသားဟာ အမှောင်ထုထဲက ထူးဆန်းတဲ့ အသံတစ်ခုဆီကို လျှောက်သွားရာကနေ...", mmTags: "#Shorts #MKrecap #သည်းထိတ်ရင်ဖို #OpusClip" },
+            { id: 2, startSec: 75, score: 96, time: "1:15 - 1:55", mmTitle: "😱 အပိုင်း ၂ - တစ်ရွာလုံး ပဟေဠိဆန်စွာ ပျောက်ဆုံးခြင်း", enTitle: "😱 Part 2 - Complete Town Mysteriously Vanished", mmScript: "မင်းသားနိုးလာတဲ့အချိန်မှာ တစ်ရွာလုံးမှာ ဘယ်သူမှ မရှိတော့ဘဲ ပစ္စည်းတွေအားလုံးဟာ သွေးကွက်တွေနဲ့အတူ ပြန့်ကျဲနေတာကို တွေ့လိုက်ရတဲ့အခါမှာတော့ အစ်ကိုတို့ရေ တကယ့်ကို ရင်တုန်ဖို့ ကောင်းသွားပါပြီ!", mmTags: "#ရုပ်ရှင်အကျဉ်းချုပ် #သည်းထိတ်ရင်ဖို #ဇာတ်လမ်းဆန်း" },
+            { id: 3, startSec: 160, score: 93, time: "2:40 - 3:20", mmTitle: "🚨 အပိုင်း ၃ - မြေအောက်ခန်းထဲက သတ္တဝါဆန်း၏ လျှို့ဝှက်ချက်", enTitle: "🚨 Part 3 - Dark Secret in the Ancient Basement", mmScript: "ရွာရဲ့ အောက်ခြေမှာ နှစ်ပေါင်း ရာချီ ပိတ်လှောင်ခံထားရတဲ့ သတ္တဝါကြီးတစ်ကောင် ရှိနေပါတယ်။ အဲ့ဒီအကောင်ကြီးဟာ သာမန်မျက်စိနဲ့ မမြင်နိုင်တဲ့ စွမ်းအားတွေ ရှိနေတယ်ဆိုတာ ဂျွန်တစ်ယောက် သိသွားတဲ့အချိန်မှာတော့...", mmTags: "#ShortsMM #CinemaRecap #MinKhant #AI" },
+            { id: 4, startSec: 265, score: 89, time: "4:25 - 5:00", mmTitle: "🏃‍♂️ အပိုင်း ၄ - အသက်လုပြီး ပြေးရမည့် Climax အခန်း", enTitle: "🏃‍♂️ Part 4 - High-Stakes Heart Pounding Escape", mmScript: "လွတ်မြောက်ဖို့ လမ်းစမရှိတော့တဲ့ ကျဉ်းမြောင်းတဲ့ ကော်ရီဒါလမ်းထဲမှာ ဂျွန်တစ်ယောက် အသက်လုပြီး အသည်းအသန် ပြေးနေရပါတယ်။ နောက်ကနေ အကောင်ကြီးက တရစပ် လိုက်လာနေပြီ ဗျာ!", mmTags: "#အသည်းအသန် #ထွက်ပြေးခြင်း #RecapStudio #Opus" },
+            { id: 5, startSec: 380, score: 87, time: "6:20 - 6:50", mmTitle: "💡 အပိုင်း ၅ - တကယ့် ဇာတ်ရှိန်ပြောင်းလဲသွားသည့် အကွက်", enTitle: "💡 Part 5 - Mind-Bending Sudden Plot Twist", mmScript: "ဒါပေမဲ့ တကယ့် အမှန်တရားက အားလုံး ထင်ထားတာနဲ့ လုံးဝ တခြားစီ ဖြစ်နေပါတယ်။ အဲ့ဒီ သတ္တဝါကြီးဟာ ရွာသားတွေကို သတ်နေတာ မဟုတ်ဘဲ ရွာသားတွေရန်ကနေ ကာကွယ်ပေးနေတာဆိုတာ သိလိုက်ရတဲ့အခါ...", mmTags: "#ဇာတ်ရှိန်အလှည့်အပြောင်း #ရုပ်ရှင်ဇာတ်လမ်း #အမှန်တရား" },
+            { id: 6, startSec: 510, score: 84, time: "8:30 - 9:05", mmTitle: "🎬 အပိုင်း ၆ - လုံးဝ မထင်မှတ်ထားရမည့် ဇာတ်သိန်ပိုင်း", enTitle: "🎬 Part 6 - Shocking Unbelievable Climax Ending", mmScript: "ဇာတ်လမ်းရဲ့ အဆုံးသတ်မှာ ဂျွန်တစ်ယောက် ကျိုးပဲ့နေတဲ့ လှေတစ်စင်းနဲ့ ကျွန်းပေါ်ကနေ ထွက်ခွာနိုင်ခဲ့ပေမဲ့ သူ့ရဲ့ ရင်ဘတ်ပေါ်မှာတော့ ထူးဆန်းတဲ့ သင်္ကေတတစ်ခု အလိုအလျောက် ပေါ်လာပါတော့တယ်...။ ကြည့်ရှုပေးလို့ ကျေးဇူးပါဗျာ!", mmTags: "#ဇာတ်သိမ်း #ရုပ်ရှင်အကျဉ်းချုပ် #MKrecapAI #Trending" }
+        ];
 
-        // Fetch URL logic
+        // Fetch YouTube URL
         function handleUrlFetch() {
             const url = document.getElementById('videoUrlInput').value.trim();
             if(!url) {
-                alert(currentLang === 'mm' ? "ကျေးဇူးပြု၍ ဗီဒီယိုလင့်ခ် ထည့်ပေးပါဦး။" : "Please enter a valid URL.");
+                alert(currentLang === 'mm' ? "ကျေးဇူးပြု၍ ဗီဒီယိုလင့်ခ် ထည့်ပေးပါဦး။" : "Please enter a YouTube URL.");
                 return;
             }
 
@@ -326,108 +242,96 @@
 
             if(videoId) {
                 currentEmbedBaseUrl = `https://www.youtube.com/embed/${videoId}`;
-                const iframe = document.getElementById('mainUrlPlayer');
+                document.getElementById('mainUrlPlayer').classList.remove('hidden');
                 document.getElementById('videoPlaceholder').classList.add('hidden');
-                iframe.classList.remove('hidden');
-                iframe.src = currentEmbedBaseUrl;
-                showToast(currentLang === 'mm' ? "🔗 ဗီဒီယိုရင်းမြစ် ချိတ်ဆက်မိပါပြီ။" : "🔗 Video source connected.");
+                document.getElementById('mainUrlPlayer').src = currentEmbedBaseUrl;
+                showToast(currentLang === 'mm' ? "🔗 ဗီဒီယို ချိတ်ဆက်မှု အောင်မြင်သည်" : "🔗 YouTube video linked successfully.");
             } else {
-                alert(currentLang === 'mm' ? "မှန်ကန်သော YouTube URL ဖြစ်ရန် လိုအပ်ပါသည်။" : "Please provide a standard YouTube link.");
+                alert(currentLang === 'mm' ? "မှန်ကန်သော YouTube Link ဖြစ်ရန် လိုအပ်ပါသည်။" : "Invalid YouTube Format.");
             }
         }
 
-        // Opus AI Core Automation Splitter Simulator
+        // Opus & vidIQ Engine Processing Simulator
         function processOpusEngine() {
             if(!currentEmbedBaseUrl) {
-                alert(currentLang === 'mm' ? "ဗီဒီယိုလင့်ခ်ကို အရင် Fetch လုပ်ပေးပါဦး။" : "Please Fetch the video link first.");
+                alert(currentLang === 'mm' ? "ဗီဒီယိုလင့်ခ်ကို အရင် Fetch လုပ်ပေးပါဦး။" : "Please Fetch the URL source first.");
                 return;
             }
 
-            const format = document.querySelector('input[name="clipFormat"]:checked').value;
             const btn = document.getElementById('btnProcess');
-            
-            showToast(currentLang === 'mm' ? "⏳ Opus AI အင်ဂျင်က ဗီဒီယိုကို အပိုင်းအစများ ဖြတ်တောက်နေသည်..." : "⏳ Opus AI Engine is segmenting and cutting long video...");
-            btn.innerText = currentLang === 'mm' ? "⚡ AI Cutting..." : "⚡ AI Cutting...";
+            showToast(currentLang === 'mm' ? "⏳ Opus AI က ဗီဒီယိုထဲမှ အကောင်းဆုံး Shorts ၆ ခုကို Auto-Cutting လုပ်နေပါသည်..." : "⏳ Opus AI is cutting and rendering 6 separate viral Shorts clips...");
+            btn.innerText = "⏳ AI Cutting...";
 
             setTimeout(() => {
-                const clips = opusMockDatabase[format];
                 const gridList = document.getElementById('clipsGridList');
-                gridList.innerHTML = ""; // Clear active items
+                gridList.innerHTML = ""; // Reset panel
 
-                clips.forEach(clip => {
-                    const data = clip[currentLang];
+                // Dynamic Injection of 6 Custom Shorts Cards
+                bigShortsData.forEach(clip => {
+                    const title = currentLang === 'mm' ? clip.mmTitle : clip.enTitle;
                     const card = document.createElement('div');
-                    card.className = "bg-slate-950 p-4 border border-slate-800 hover:border-brand-500 rounded-lg cursor-pointer transition flex flex-col justify-between space-y-3 relative overflow-hidden group";
-                    card.setAttribute('onclick', `selectActiveClip('${format}', ${clip.id}, ${clip.seconds})`);
-                    
+                    card.className = "bg-slate-950 p-4 border border-slate-800 hover:border-brand-500 rounded-xl cursor-pointer transition flex flex-col justify-between relative overflow-hidden group";
+                    card.setAttribute('onclick', `activateSelectedShort(${clip.id})`);
+
                     card.innerHTML = `
-                        <div class="absolute top-0 right-0 bg-emerald-500/10 text-emerald-400 text-[10px] px-2 py-0.5 border-b border-l border-emerald-500/20 font-mono font-bold flex items-center gap-1">
-                            <i data-lucide="zap" class="w-2.5 h-2.5 fill-current"></i> ${clip.score}% Score
+                        <div class="absolute top-0 right-0 bg-brand-500/10 text-brand-400 text-[10px] px-2.5 py-1 border-b border-l border-brand-500/20 font-mono font-bold flex items-center gap-1">
+                            <i data-lucide="zap" class="w-3 h-3 fill-current"></i> ${clip.score}% Viral Score
                         </div>
-                        <div>
-                            <div class="text-brand-400 font-mono text-xs flex items-center gap-1 mb-1">
-                                <i data-lucide="clock" class="w-3 h-3"></i> ${clip.timeLabel}
+                        <div class="space-y-1.5">
+                            <div class="text-emerald-400 font-mono text-[11px] flex items-center gap-1">
+                                <i data-lucide="clock" class="w-3 h-3"></i> ${clip.time}
                             </div>
-                            <h4 class="text-xs font-bold text-slate-200 line-clamp-2 group-hover:text-brand-400 transition">${data.title}</h4>
+                            <h4 class="text-xs font-bold text-slate-200 line-clamp-2 group-hover:text-brand-400 transition">${title}</h4>
                         </div>
-                        <div class="flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-900 pt-2">
-                            <span>${format === 'shorts' ? 'Shorts' : 'Recap Video'}</span>
-                            <span class="text-brand-500 font-medium flex items-center gap-0.5">Edit Studio <i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+                        <div class="flex items-center justify-between text-[10px] text-slate-500 border-t border-slate-900 pt-2 mt-3">
+                            <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Vertical Shorts</span>
+                            <span class="text-brand-400 font-bold flex items-center gap-0.5">Open Editor <i data-lucide="chevron-right" class="w-3 h-3"></i></span>
                         </div>
                     `;
                     gridList.appendChild(card);
                 });
 
                 lucide.createIcons();
-                document.getElementById('opusClipsContainer').classList.remove('hidden');
-                document.getElementById('assetsTabsWrapper').classList.remove('hidden');
-                
-                // Select first item as active default
-                selectActiveClip(format, clips[0].id, clips[0].seconds);
-                
-                btn.innerText = currentLang === 'mm' ? "Opus Engine ဖြင့် ဗီဒီယို ဖြတ်တောက်မည်" : "Run Opus AI Auto-Cutter Engine";
-                showToast(currentLang === 'mm' ? "✅ အခန်းများ ဖြတ်တောက်ခြင်း အောင်မြင်သည်!" : "✅ Auto-cutting process finished!");
+                document.getElementById('opusClipsSection').classList.remove('hidden');
+                document.getElementById('vidiqAnalyticsWrapper').classList.remove('hidden');
+
+                // Default auto-select 1st clip
+                activateSelectedShort(1);
+
+                btn.innerText = currentLang === 'mm' ? "Opus Engine ဖြင့် Shorts အများကြီး ခွဲထုတ်မည်" : "Run Opus AI & vidIQ Engine";
+                showToast(currentLang === 'mm' ? "✅ Shorts ၆ ခု တစ်ပြိုင်နက်တည်း ထွက်လာပါပြီ!" : "✅ 6 Shorts extracted simultaneously!");
+
+                // Auto Scroll smoothly down to the generated catalog
+                document.getElementById('opusClipsSection').scrollIntoView({ behavior: 'smooth' });
+
             }, 2500);
         }
 
-        // Clip Selector & Player Sync Simulation
-        function selectActiveClip(format, id, targetSeconds) {
-            const clipList = opusMockDatabase[format];
-            const activeClip = clipList.find(c => c.id === id);
-            const data = activeClip[currentLang];
+        // Active Shorts Selection & Dynamic Form Filler
+        function activateSelectedShort(id) {
+            const clip = bigShortsData.find(c => c.id === id);
+            
+            // Set dynamic text values
+            document.getElementById('vidiqTitleBox').value = currentLang === 'mm' ? clip.mmTitle : clip.enTitle;
+            document.getElementById('vidiqScriptBox').value = `${currentLang === 'mm' ? clip.mmScript : clip.enScript}\n\n${currentLang === 'mm' ? clip.mmTags : clip.enTags}`;
+            
+            // Randomize vidIQ statistics tags dynamically to feel natural
+            document.getElementById('vidiqSeo').innerText = `${clip.score}/100`;
+            document.getElementById('vidiqViews').innerText = `${id * 40}K - ${(id * 150) + 100}K`;
 
-            // Injects text fields to studio editor tabs
-            document.getElementById('activeScriptTxt').value = data.script;
-            document.getElementById('activeTitleInp').value = data.title;
-            document.getElementById('activeTagsInp').value = data.tags;
-
-            // Simulated Caption Overlays
+            // Active subtitle injection view
             const subOverlay = document.getElementById('videoSubtitleOverlay');
             const subText = document.getElementById('videoSubText');
             subOverlay.classList.remove('hidden');
-            subText.innerText = data.title;
+            subText.innerText = currentLang === 'mm' ? clip.mmTitle : clip.enTitle;
 
-            // Sync Web Player Timeline jump
+            // Timeline jump inside embedded iframe player
             if(currentEmbedBaseUrl) {
-                const iframe = document.getElementById('mainUrlPlayer');
-                iframe.src = `${currentEmbedBaseUrl}?start=${targetSeconds}&autoplay=1`;
+                document.getElementById('mainUrlPlayer').src = `${currentEmbedBaseUrl}?start=${clip.startSec}&autoplay=1`;
             }
         }
 
-        // Basic Tab Switch Engine
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
-            document.querySelectorAll('[id^="btn-tab-"]').forEach(b => {
-                b.classList.remove('border-brand-500', 'text-brand-500');
-                b.classList.add('border-transparent', 'text-slate-400');
-            });
-            document.getElementById(tabId).classList.remove('hidden');
-            const activeBtn = document.getElementById(`btn-${tabId}`);
-            activeBtn.classList.remove('border-transparent', 'text-slate-400');
-            activeBtn.classList.add('border-brand-500', 'text-brand-500');
-        }
-
-        // Language Multi-support state updater
+        // Language Multi-support implementation
         function switchLang(lang) {
             currentLang = lang;
             if(lang === 'mm') {
@@ -446,7 +350,7 @@
             const textEl = document.getElementById(elementId);
             textEl.select();
             navigator.clipboard.writeText(textEl.value);
-            showToast(currentLang === 'mm' ? "ကော်ပီကူးယူပြီးပါပြီ!" : "Copied successfully!");
+            showToast(currentLang === 'mm' ? "ကော်ပီကူးယူပြီးပါပြီ!" : "Copied to clipboard!");
         }
 
         function showToast(message) {
